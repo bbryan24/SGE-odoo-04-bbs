@@ -1,0 +1,11 @@
+<odoo>
+    <record id="editorial1" model="bbs_mango.bbs_editorial">
+        <field name="name">Shueisha</field>
+        <field name="pais">Japón</field>
+    </record>
+
+    <record id="editorial2" model="bbs_mango.bbs_editorial">
+        <field name="name">Kodansha</field>
+        <field name="pais">Japón</field>
+    </record>
+</odoo>

@@ -1,0 +1,17 @@
+<odoo>
+    <record id="pedido1" model="bbs_mango.bbs_pedido">
+        <field name="name">PED-001</field>
+        <field name="cliente_id" ref="cliente1"/>
+        <field name="fecha">2026-01-12</field>
+        <field name="estado">confirmado</field>
+        <field name="mangas_ids" eval="[(4, ref('manga1')), (4, ref('manga2'))]"/>
+    </record>
+
+    <record id="pedido2" model="bbs_mango.bbs_pedido">
+        <field name="name">PED-002</field>
+        <field name="cliente_id" ref="cliente2"/>
+        <field name="fecha">2026-01-12</field>
+        <field name="estado">borrador</field>
+        <field name="mangas_ids" eval="[(4, ref('manga2'))]"/>
+    </record>
+</odoo>
