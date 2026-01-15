@@ -1,7 +1,7 @@
 <odoo>
     <record id="view_editorial_tree" model="ir.ui.view">
-        <field name="name">manga.shop.editorial.tree</field>
-        <field name="model">manga.shop.editorial</field>
+        <field name="name">bbs_mango.bbs_editorial.tree</field>
+        <field name="model">bbs_mango.bbs_editorial</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
@@ -11,8 +11,8 @@
     </record>
 
     <record id="view_editorial_form" model="ir.ui.view">
-        <field name="name">manga.shop.editorial.form</field>
-        <field name="model">manga.shop.editorial</field>
+        <field name="name">bbs_mango.bbs_editorial.form</field>
+        <field name="model">bbs_mango.bbs_editorial</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
@@ -38,9 +38,7 @@
 
     <record id="action_editorial" model="ir.actions.act_window">
         <field name="name">Editoriales</field>
-        <field name="res_model">manga.shop.editorial</field>
+        <field name="res_model">bbs_mango.bbs_editorial</field>
         <field name="view_mode">tree,form</field>
     </record>
-
-    <menuitem id="menu_editorial" name="Editoriales" parent="menu_manga_root" action="action_editorial"/>
 </odoo>

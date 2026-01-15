@@ -1,7 +1,7 @@
 <odoo>
     <record id="view_manga_tree" model="ir.ui.view">
-        <field name="name">manga.shop.manga.tree</field>
-        <field name="model">manga.shop.manga</field>
+        <field name="name">bbs_mango.bbs_manga.tree</field>
+        <field name="model">bbs_mango.bbs_manga</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
@@ -14,8 +14,8 @@
     </record>
 
     <record id="view_manga_form" model="ir.ui.view">
-        <field name="name">manga.shop.manga.form</field>
-        <field name="model">manga.shop.manga</field>
+        <field name="name">bbs_mango.bbs_manga.form</field>
+        <field name="model">bbs_mango.bbs_manga</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
@@ -24,13 +24,25 @@
                         <field name="precio"/>
                         <field name="stock"/>
                         <field name="fecha_publicacion"/>
-                        <field name="genero"/>
                         <field name="autor_id"/>
                         <field name="editorial_id"/>
                         <field name="image_1920" widget="image"/>
                     </group>
-                    <notebook>
-                        <page string="Pedidos">
-                            <field name="pedidos_ids">
-                                <tree>
-                                    <field
+                    <group>
+                        <field name="generos_ids" widget="many2many_tags">
+                            <tree>
+                                <field name="name"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_manga" model="ir.actions.act_window">
+        <field name="name">Mangas</field>
+        <field name="res_model">bbs_mango.bbs_manga</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

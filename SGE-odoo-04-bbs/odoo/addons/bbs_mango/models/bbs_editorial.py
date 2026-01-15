@@ -6,5 +6,5 @@ class Editorial(models.Model):
 
     name = fields.Char(string='Nombre', required=True)
     pais = fields.Char(string='País')
-    mangas_ids = fields.One2many('bbs_mango.bbs_manga', 'editorial_id', string='Mangas Publicados')
 
+    mangas_ids = fields.One2many('bbs_mango.bbs_manga', 'editorial_id', string='Mangas publicados')
