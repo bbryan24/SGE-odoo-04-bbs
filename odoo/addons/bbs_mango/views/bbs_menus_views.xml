@@ -1,0 +1,32 @@
+<odoo>
+    <menuitem id="menu_bbs_mango_root" name="Mango" sequence="1"/>
+
+    <record id="action_bbs_autores" model="ir.actions.act_window">
+        <field name="name">Autores</field>
+        <field name="res_model">bbs_mango.bbs_autor</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_bbs_editoriales" model="ir.actions.act_window">
+        <field name="name">Editoriales</field>
+        <field name="res_model">bbs_mango.bbs_editorial</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_bbs_generos" model="ir.actions.act_window">
+        <field name="name">Géneros</field>
+        <field name="res_model">bbs_mango.bbs_genero</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_bbs_mangas" model="ir.actions.act_window">
+        <field name="name">Mangas</field>
+        <field name="res_model">bbs_mango.bbs_manga</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_bbs_autores" name="Autores" parent="menu_bbs_mango_root" sequence="1" action="action_bbs_autores"/>
+    <menuitem id="menu_bbs_editoriales" name="Editoriales" parent="menu_bbs_mango_root" sequence="2" action="action_bbs_editoriales"/>
+    <menuitem id="menu_bbs_generos" name="Géneros" parent="menu_bbs_mango_root" sequence="3" action="action_bbs_generos"/>
+    <menuitem id="menu_bbs_mangas" name="Mangas" parent="menu_bbs_mango_root" sequence="4" action="action_bbs_mangas"/>
+</odoo>
