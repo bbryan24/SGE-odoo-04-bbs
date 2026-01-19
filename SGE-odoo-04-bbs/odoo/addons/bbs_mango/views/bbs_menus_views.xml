@@ -1,5 +1,5 @@
 <odoo>
-    <menuitem id="menu_bbs_mango_root" name="Manga Shop" sequence="1"/>
+    <menuitem id="menu_bbs_mango_root" name="Mango" sequence="1"/>
 
     <record id="action_bbs_autores" model="ir.actions.act_window">
         <field name="name">Autores</field>

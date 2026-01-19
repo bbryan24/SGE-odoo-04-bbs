@@ -23,8 +23,6 @@ Una tienda de manga japones donde podras encontrar tus titulos favoritos y nueva
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
         'views/bbs_autor_views.xml',
         'views/bbs_editorial_views.xml',
         'views/bbs_genero_views.xml',
@@ -35,7 +33,6 @@ Una tienda de manga japones donde podras encontrar tus titulos favoritos y nueva
     'demo': [
         'demo/demo.xml',
     ],
-    'icon': 'static/description/icon.png',
 
 }
 
