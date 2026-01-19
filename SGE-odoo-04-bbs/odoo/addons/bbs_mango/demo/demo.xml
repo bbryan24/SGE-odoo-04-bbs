@@ -1,0 +1,62 @@
+<odoo>
+  <record id="demo_autor1" model="bbs_mango.bbs_autor">
+      <field name="name">Masashi Kishimoto</field>
+      <field name="nacionalidad">Japonesa</field>
+  </record>
+
+  <record id="demo_autor2" model="bbs_mango.bbs_autor">
+      <field name="name">Eiichiro Oda</field>
+      <field name="nacionalidad">Japonesa</field>
+  </record>
+
+  <record id="demo_autor3" model="bbs_mango.bbs_autor">
+    <field name="name">Hajime Isayama</field>
+    <field name="nacionalidad">Japonesa</field>
+</record>
+
+  <record id="demo_editorial1" model="bbs_mango.bbs_editorial">
+      <field name="name">Shueisha</field>
+      <field name="pais">Japón</field>
+  </record>
+
+  <record id="demo_editorial2" model="bbs_mango.bbs_editorial">
+      <field name="name">Kodansha</field>
+      <field name="pais">Japón</field>
+  </record>
+
+  <record id="demo_genero1" model="bbs_mango.bbs_genero">
+      <field name="name">Shonen</field>
+  </record>
+
+  <record id="demo_genero2" model="bbs_mango.bbs_genero">
+      <field name="name">Seinen</field>
+  </record>
+
+  <record id="demo_manga1" model="bbs_mango.bbs_manga">
+      <field name="name">Naruto</field>
+      <field name="precio">9.99</field>
+      <field name="stock">50</field>
+      <field name="autor_id" ref="demo_autor1"/>
+      <field name="editorial_id" ref="demo_editorial1"/>
+      <field name="generos_ids" eval="[(4, ref('demo_genero1'))]"/>
+      <field name="image_1920" type="base64" file="bbs_mango/demo/images/Naruto.png"/>
+  </record>
+
+  <record id="demo_manga2" model="bbs_mango.bbs_manga">
+      <field name="name">One Piece</field>
+      <field name="precio">10.50</field>
+      <field name="stock">30</field>
+      <field name="autor_id" ref="demo_autor2"/>
+      <field name="editorial_id" ref="demo_editorial1"/>
+      <field name="generos_ids" eval="[(4, ref('demo_genero1'))]"/>
+  </record>
+
+  <record id="demo_manga3" model="bbs_mango.bbs_manga">
+      <field name="name">Attack on Titan</field>
+      <field name="precio">12.00</field>
+      <field name="stock">20</field>
+      <field name="autor_id" ref="demo_autor3"/>
+      <field name="editorial_id" ref="demo_editorial2"/>
+      <field name="generos_ids" eval="[(4, ref('demo_genero2'))]"/>
+  </record>
+</odoo>
