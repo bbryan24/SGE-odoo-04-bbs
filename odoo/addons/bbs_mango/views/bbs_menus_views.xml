@@ -22,8 +22,10 @@
     <record id="action_bbs_mangas" model="ir.actions.act_window">
         <field name="name">Mangas</field>
         <field name="res_model">bbs_mango.bbs_manga</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{'group_by': 'editorial_id'}</field>
     </record>
+    
 
     <menuitem id="menu_bbs_autores" name="Autores" parent="menu_bbs_mango_root" sequence="1" action="action_bbs_autores"/>
     <menuitem id="menu_bbs_editoriales" name="Editoriales" parent="menu_bbs_mango_root" sequence="2" action="action_bbs_editoriales"/>

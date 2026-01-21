@@ -40,9 +40,49 @@
         </field>
     </record>
 
-    <record id="action_manga" model="ir.actions.act_window">
-        <field name="name">Mangas</field>
-        <field name="res_model">bbs_mango.bbs_manga</field>
-        <field name="view_mode">tree,form</field>
+    <record id="view_manga_kanban" model="ir.ui.view">
+        <field name="name">bbs_mango.bbs_manga.kanban</field>
+        <field name="model">bbs_mango.bbs_manga</field>
+        <field name="arch" type="xml">
+            <kanban class="kanban_mangas" default_group_by="editorial_id">
+                <field name="name"/>
+                <field name="precio"/>
+                <field name="stock"/>
+                <field name="image_1920"/>
+                <field name="generos_ids"/>
+                <field name="editorial_id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="tarjeta_manga o_kanban_global_click">
+                            <div class="imagen_manga">
+                                <img t-att-src="kanban_image('bbs_mango.bbs_manga', 'image_1920', record.id.value)"
+                                     class="imagen_manga_contenido"/>
+                            </div>
+                            <div class="detalles_manga">
+                                <strong class="titulo_manga">
+                                    <t t-esc="record.name.value"/>
+                                </strong>
+                                <div class="precio_manga">
+                                    Precio: <t t-esc="record.precio.value"/> €
+                                </div>
+                                <div t-if="record.stock.value &gt; 0" class="stock_disponible">
+                                    Stock: <t t-esc="record.stock.value"/>
+                                </div>
+                                <div t-if="record.stock.value == 0" class="stock_agotado">
+                                    Sin stock
+                                </div>
+                                <div class="lista_generos">
+                                    <t t-foreach="record.generos_ids.value" t-as="genero">
+                                        <span class="etiqueta_genero">
+                                            <t t-esc="genero.display_name"/>
+                                        </span>
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
     </record>
 </odoo>

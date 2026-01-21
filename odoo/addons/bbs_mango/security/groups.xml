@@ -1,0 +1,32 @@
+<odoo>
+    <record id="group_bbs_user" model="res.groups">
+        <field name="name">BBS Usuario</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record id="group_bbs_editor" model="res.groups">
+        <field name="name">BBS Editor</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids"
+               eval="[
+                   (4, ref('bbs_mango.group_bbs_user'))
+               ]"/>
+    </record>
+
+    <record id="group_bbs_admin" model="res.groups">
+        <field name="name">BBS Administrador</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids"
+               eval="[
+                   (4, ref('bbs_mango.group_bbs_editor')),
+                   (4, ref('base.group_system'))
+               ]"/>
+    </record>
+    <record id="base.user_admin" model="res.users">
+        <field name="groups_id" eval="[(4, ref('bbs_mango.group_bbs_admin'))]"/>
+    </record>
+    <record id="base.group_user" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('bbs_mango.group_bbs_user'))]"/>
+    </record>
+</odoo>
