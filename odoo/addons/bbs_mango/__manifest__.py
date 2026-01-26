@@ -7,7 +7,7 @@
     'description': """
 Una tienda de manga japones donde podras encontrar tus titulos favoritos y nuevas recomendaciones.
     """,
-
+    'license': 'LGPL-3',
     'author': "BBS Company",
     'website': "https://www.yourcompany.com",
 
